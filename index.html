@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d4af37;
+            --primary: #d4af37; /* Dourado Principal */
             --bg: #050505;
-            --border: rgba(212, 175, 55, 0.2);
+            --border: rgba(212, 175, 55, 0.3);
             --card-bg: rgba(255, 255, 255, 0.02);
         }
 
@@ -18,7 +18,7 @@
 
         body {
             background: var(--bg);
-            color: white;
+            color: var(--primary); /* Texto global em dourado */
             font-family: 'Inter', sans-serif;
             display: flex;
             align-items: center;
@@ -36,10 +36,8 @@
             z-index: 10;
         }
 
-        /* HEADER - IMAGEM E TÍTULO */
-        .header {
-            margin-bottom: 25px;
-        }
+        /* HEADER */
+        .header { margin-bottom: 25px; }
 
         .logo-box {
             width: 100%;
@@ -58,14 +56,12 @@
             border-radius: 12px;
         }
 
-        /* ESTILO DO LOGO DE SEGURANÇA (SVG) */
         .fallback-svg {
             width: 140px;
             height: auto;
             margin: 0 auto;
             display: block;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
-            animation: fadeIn 0.5s ease-out;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
         }
 
         .brand-title {
@@ -83,23 +79,24 @@
             font-weight: 300;
             font-size: 0.9rem;
             letter-spacing: 14px;
-            color: #d1d1d1;
+            color: var(--primary); /* Legend em dourado */
             text-transform: uppercase;
             margin-bottom: 25px;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .bio {
-            color: #666;
+            color: var(--primary); /* Bio em dourado */
             font-size: 0.7rem;
             margin-bottom: 35px;
             line-height: 1.6;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
+            opacity: 0.8;
         }
 
-        /* BARRA DE ESTATÍSTICAS COMO LINKS */
+        /* STATS / MODS */
         .stats-bar {
             display: flex;
             background: var(--card-bg);
@@ -110,14 +107,8 @@
             backdrop-filter: blur(10px);
         }
 
-        .stat-item { 
-            flex: 1; 
-            transition: transform 0.2s ease;
-        }
-
-        .stat-item:hover {
-            transform: scale(1.05);
-        }
+        .stat-item { flex: 1; transition: transform 0.2s ease; }
+        .stat-item:hover { transform: scale(1.05); }
 
         .stat-item h4 {
             font-size: 0.6rem;
@@ -130,29 +121,29 @@
         .stat-item p {
             font-size: 0.75rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--primary); /* Texto do status em dourado */
             letter-spacing: 1px;
         }
 
         .divider {
             width: 1px;
-            background: rgba(212, 175, 55, 0.15);
+            background: var(--border);
             margin: 0 5px;
         }
 
         /* LINKS GLOBAIS */
         a {
             text-decoration: none;
-            color: inherit;
+            color: var(--primary); /* Links em dourado */
             display: block;
             width: 100%;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* CARD DE PROJETO */
+        /* PROJETO ATUAL */
         .project-card {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.96)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800');
+            background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800');
             background-size: cover;
             background-position: center;
             border: 1px solid var(--primary);
@@ -163,12 +154,12 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
         }
 
         .ribbon {
@@ -194,9 +185,10 @@
 
         .project-card p {
             font-size: 0.85rem;
-            color: #999;
+            color: var(--primary); /* Parágrafo do card em dourado */
             line-height: 1.5;
             margin-bottom: 25px;
+            opacity: 0.85;
         }
 
         .project-link-label {
@@ -207,7 +199,7 @@
             text-transform: uppercase;
         }
 
-        /* LINKS GRID */
+        /* GRID DE LINKS */
         .links-grid {
             display: flex;
             flex-direction: column;
@@ -228,32 +220,33 @@
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
+            color: var(--primary); /* Texto do botão em dourado */
         }
 
         .link-card:hover {
             border-color: var(--primary);
-            background: rgba(212, 175, 55, 0.05);
-            color: var(--primary);
+            background: rgba(212, 175, 55, 0.08);
             transform: translateY(-3px);
         }
 
+        /* RODAPÉ DOURADO */
         footer {
             margin-top: 50px;
             font-size: 0.6rem;
-            color: #333;
+            color: var(--primary); /* Rodapé em dourado */
             letter-spacing: 4px;
             text-transform: uppercase;
+            opacity: 0.7;
         }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- CABEÇALHO COM FALLBACK DE IMAGEM -->
+        <!-- HEADER -->
         <div class="header">
             <div class="logo-box">
+                <!-- Fallback automático se a imagem 54989.jpg não for encontrada -->
                 <img src="54989.jpg" alt="NarraVox Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoSeguranca').style.display='block';">
                 
                 <svg id="logoSeguranca" class="fallback-svg" style="display: none;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -270,24 +263,20 @@
         
         <p class="bio">Excelência em Dublagem & Inteligência Agêntica</p>
 
-        <!-- STATUS COM LINKS DO NEXUS MODS -->
+        <!-- MODS COM LINKS -->
         <div class="stats-bar">
-            <!-- Link State of Decay -->
             <a href="https://www.nexusmods.com/stateofdecay/mods/622" target="_blank" rel="noopener noreferrer" class="stat-item">
                 <h4>🎖️ STATE OF DECAY</h4>
                 <p>DUBLADO</p>
             </a>
-            
             <div class="divider"></div>
-            
-            <!-- Link Bioshock -->
             <a href="https://www.nexusmods.com/bioshock/mods/139" target="_blank" rel="noopener noreferrer" class="stat-item">
                 <h4>🧬 BIOSHOCK</h4>
                 <p>DUBLADO</p>
             </a>
         </div>
 
-        <!-- CALL OF DUTY PLAYLIST -->
+        <!-- PROJETO PRINCIPAL (PLAYLIST YOUTUBE) -->
         <a href="https://youtube.com/playlist?list=PLQNnt6HDyn_5sc00tEz94ueTNS_vIVV8U&si=ftGDuUrMQCNYqPQy" target="_blank" rel="noopener noreferrer">
             <div class="project-card">
                 <div class="ribbon">PROJETO ATUAL</div>
@@ -297,26 +286,23 @@
             </div>
         </a>
 
-        <!-- LINKS DE CANAIS -->
+        <!-- LINKS GRID -->
         <div class="links-grid">
             <a href="https://www.youtube.com/@narravoxstudios.oficial" target="_blank" rel="noopener noreferrer" class="link-card">
                 🎬 Canal NarraVox Studios
             </a>
-
             <a href="https://www.youtube.com/@PauloDubsStudio100" target="_blank" rel="noopener noreferrer" class="link-card">
                 🎙️ Paulo Dubs Studio
             </a>
-
             <a href="https://github.com/rick60496/PhoenixDub-AI" target="_blank" rel="noopener noreferrer" class="link-card" style="border: 1px solid var(--primary);">
                 🔱 Projeto Nexus AI Pro
             </a>
         </div>
 
-        <footer>© NarraVox Studios | All Rights Reserved</footer>
+        <footer>© NarraVox Studios | Todos os direitos reservados</footer>
     </div>
 
 </body>
 </html>
-
 
 ```
